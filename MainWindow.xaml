@@ -11,6 +11,11 @@
         xmlns:local="clr-namespace:HamburguerConMvvm"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    
     <Grid>
 
         <Grid.Resources>
@@ -43,12 +48,14 @@
             </DataTemplate>
 
             <!--  these are the templates for the view models  -->
-            <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
-                <views:HomeView DataContext="{Binding}" />
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModels:PrivateViewModel}">
+            <!--<DataTemplate DataType="{x:Type viewModels:HomeViewModel}">-->
+                <!--<views:HomeView DataContext="{Binding}" />-->
+                <!--<views:HomeView />-->
+                <!--<views:HomeView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.SearchEmployeeView}" />-->
+            <!--</DataTemplate>-->
+            <!--<DataTemplate DataType="{x:Type viewModels:PrivateViewModel}">
                 <views:PrivateView DataContext="{Binding}" />
-            </DataTemplate>
+            </DataTemplate>-->
         </Grid.Resources>
         
         
@@ -56,7 +63,7 @@
         <mah:HamburgerMenu x:Name="HamburgerMenuControl"
                                 IsPaneOpen="True"
                                 ItemTemplate="{StaticResource MenuItemTemplate}"
-                                SelectedIndex="1"
+                                SelectedIndex="0"
                                 DisplayMode="CompactInline">
 
             <!--  Items  -->
@@ -65,21 +72,27 @@
                     <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Home}"
                                                      Label="Home">
                         <mah:HamburgerMenuIconItem.Tag>
-                            <views:HomeView />
+                            <DataTemplate>
+                                <views:HomeView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.HomeVM}" />
+                                <!--<views:HomeView />-->
+                            </DataTemplate>
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>
 
                     <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Key}"
                                                      Label="Private">
                         <mah:HamburgerMenuIconItem.Tag>
-                            <views:PrivateView />
+                            <DataTemplate>
+                                <views:PrivateView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.PrivateVM}" />
+                                <!--<views:PrivateView />-->
+                            </DataTemplate>                            
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.ItemsSource>
             
             <!--  select the tag (ViewModel) of the selected item (options item)  -->
-            <mah:HamburgerMenu.Content>
+            <mah:HamburgerMenu.ContentTemplate>
                 <MultiBinding Converter="{StaticResource SelectedItemToContentConverter}">
                     <Binding FallbackValue="{x:Null}"
                              Mode="OneWay"
@@ -90,7 +103,7 @@
                              Path="SelectedOptionsItem.Tag"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
-            </mah:HamburgerMenu.Content>
+            </mah:HamburgerMenu.ContentTemplate>
         </mah:HamburgerMenu>
     </Grid>
 </mah:MetroWindow>
