@@ -46,16 +46,6 @@
                     </DataTrigger>
                 </DataTemplate.Triggers>
             </DataTemplate>
-
-            <!--  these are the templates for the view models  -->
-            <!--<DataTemplate DataType="{x:Type viewModels:HomeViewModel}">-->
-                <!--<views:HomeView DataContext="{Binding}" />-->
-                <!--<views:HomeView />-->
-                <!--<views:HomeView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.SearchEmployeeView}" />-->
-            <!--</DataTemplate>-->
-            <!--<DataTemplate DataType="{x:Type viewModels:PrivateViewModel}">
-                <views:PrivateView DataContext="{Binding}" />
-            </DataTemplate>-->
         </Grid.Resources>
         
         
@@ -74,7 +64,6 @@
                         <mah:HamburgerMenuIconItem.Tag>
                             <DataTemplate>
                                 <views:HomeView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.HomeVM}" />
-                                <!--<views:HomeView />-->
                             </DataTemplate>
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>
@@ -84,7 +73,6 @@
                         <mah:HamburgerMenuIconItem.Tag>
                             <DataTemplate>
                                 <views:PrivateView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.PrivateVM}" />
-                                <!--<views:PrivateView />-->
                             </DataTemplate>                            
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>

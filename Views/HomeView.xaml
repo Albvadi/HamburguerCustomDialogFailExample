@@ -13,18 +13,18 @@
 
         <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock>
-                <Run FontWeight="Bold" Text="Nombre del customer: " />   
+                <Run FontWeight="Bold" Text="Customer Name: " />   
                 <Run Text="{Binding Path=Customer.Name}" FontSize="20" />
             </TextBlock>
         </StackPanel>
         <StackPanel Margin="0 40 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock>
-                <Run FontWeight="Bold" Text="Edad del customer: " />   
+                <Run FontWeight="Bold" Text="Customer Age: " />   
                 <Run Text="{Binding Path=Customer.Age}" FontSize="20" />
             </TextBlock>
         </StackPanel>
 
-        <Button Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Cambiar valor del customer" Command="{Binding ChangeNameCmd}" />
+        <Button Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Change Customer Data" Command="{Binding ChangeNameCmd}" />
 
     </Grid>
 </UserControl>
