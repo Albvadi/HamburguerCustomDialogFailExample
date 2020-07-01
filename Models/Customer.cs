@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HamburguerConMvvm.Models
+﻿namespace HamburguerConMvvm.Models
 {
     public class Customer
     {
@@ -14,8 +8,8 @@ namespace HamburguerConMvvm.Models
 
         public Customer()
         {
-            this.Name = "Customer 1";
-            this.Age = 18;
+            Name = "Empty Customer";
+            Age = 0;
         }
 
     }

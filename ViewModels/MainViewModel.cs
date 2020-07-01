@@ -22,9 +22,6 @@ namespace HamburguerConMvvm.ViewModels
         {
             MyCustomer = new Customer();
 
-            Debug.WriteLine($"Customer Name: {MyCustomer.Name}");
-            Debug.WriteLine($"Customer Age: {MyCustomer.Age}");
-
             HomeVM = new HomeViewModel(MyCustomer);
             PrivateVM = new PrivateViewModel(MyCustomer);
         }
