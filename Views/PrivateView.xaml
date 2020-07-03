@@ -9,17 +9,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     
     <Grid>
-        <Label Content="PRIVATE VIEW" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40"/>
+        <Label Content="CUSTOMER VIEW" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40"/>
+        <Label Margin="20 80" Content=" View to demostrate how to share global data" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
 
         <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock>
-                <Run FontWeight="Bold" Text="Nombre del customer: " />   
+                <Run FontWeight="Bold" Text="Customer Name: " />   
                 <Run Text="{Binding Path=Customer.Name}" FontSize="20" />
             </TextBlock>
         </StackPanel>
         <StackPanel Margin="0 40 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock>
-                <Run FontWeight="Bold" Text="Edad del customer: " />   
+                <Run FontWeight="Bold" Text="Customer Age: " />   
                 <Run Text="{Binding Path=Customer.Age}" FontSize="20" />
             </TextBlock>
         </StackPanel>

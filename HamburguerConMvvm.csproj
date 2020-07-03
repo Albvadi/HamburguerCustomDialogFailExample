@@ -74,13 +74,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Base\AsyncCommand.cs" />
     <Compile Include="Base\PropertyChangedViewModel.cs" />
     <Compile Include="Base\RelayCommand.cs" />
+    <Compile Include="Base\TaskUtilities.cs" />
     <Compile Include="Converters\SelectedItemToContentConverter.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="ViewModels\CustomDialogPinContent.cs" />
+    <Compile Include="ViewModels\DialogsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PrivateViewModel.cs" />
+    <Compile Include="Views\CustomDialogPin.xaml.cs">
+      <DependentUpon>CustomDialogPin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogsView.xaml.cs">
+      <DependentUpon>DialogsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PrivateView.xaml.cs">
       <DependentUpon>PrivateView.xaml</DependentUpon>
     </Compile>
@@ -99,6 +109,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CustomDialogPin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PrivateView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

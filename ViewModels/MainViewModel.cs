@@ -1,12 +1,5 @@
 ﻿using HamburguerConMvvm.Base;
 using HamburguerConMvvm.Models;
-using HamburguerConMvvm.Views;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HamburguerConMvvm.ViewModels
 {
@@ -17,6 +10,7 @@ namespace HamburguerConMvvm.ViewModels
         public HomeViewModel HomeVM { get; set; }
 
         public PrivateViewModel PrivateVM { get; set; }
+        public DialogsViewModel DialogsVM { get; set; }
 
         public MainViewModel()
         {
@@ -24,6 +18,7 @@ namespace HamburguerConMvvm.ViewModels
 
             HomeVM = new HomeViewModel(MyCustomer);
             PrivateVM = new PrivateViewModel(MyCustomer);
+            DialogsVM = new DialogsViewModel();
         }
 
     }

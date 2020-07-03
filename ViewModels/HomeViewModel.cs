@@ -14,7 +14,7 @@ namespace HamburguerConMvvm.ViewModels
         {
             Customer = myCustomer;
 
-            ChangeNameCmd = new RelayCommand(ChangeName);
+            ChangeNameCmd = new RelayCommand(ChangeName);            
         }
 
         public void ChangeName(object obj)

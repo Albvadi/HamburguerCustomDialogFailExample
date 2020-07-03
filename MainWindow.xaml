@@ -68,12 +68,21 @@
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>
 
-                    <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Key}"
-                                                     Label="Private">
+                    <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountKey}"
+                                                     Label="Customer">
                         <mah:HamburgerMenuIconItem.Tag>
                             <DataTemplate>
                                 <views:PrivateView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.PrivateVM}" />
                             </DataTemplate>                            
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+
+                    <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=MessageAlert}"
+                                                     Label="Dialogs">
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <DataTemplate>
+                                <views:DialogsView DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=mah:MetroWindow}, Path=DataContext.DialogsVM}" />
+                            </DataTemplate>
                         </mah:HamburgerMenuIconItem.Tag>
                     </mah:HamburgerMenuIconItem>
                 </mah:HamburgerMenuItemCollection>
