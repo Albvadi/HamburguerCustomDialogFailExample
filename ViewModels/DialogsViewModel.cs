@@ -75,7 +75,9 @@ namespace HamburguerConMvvm.ViewModels
 
             CustomResult = "Showing the dialog...";
 
-            await RunCustomFromVm();
+            bool ok = await RunCustomFromVm();
+
+            CustomResult = ok ? "Allowed" : "Denied";
 
             await Task.Delay(1000);
             
@@ -85,7 +87,7 @@ namespace HamburguerConMvvm.ViewModels
 
             CustomResult = "Long process finished";
         }
-        private async Task RunCustomFromVm()
+        private async Task<bool> RunCustomFromVm()
         {
             var customDialog = new CustomDialog() { Title = "Custom Dialog" };
 
@@ -96,7 +98,11 @@ namespace HamburguerConMvvm.ViewModels
             });
             customDialog.Content = new CustomDialogPin { DataContext = dataContext };
 
-            await DialogCoordinator.Instance.ShowMetroDialogAsync(this, customDialog);
+             await DialogCoordinator.Instance.ShowMetroDialogAsync(this, customDialog);
+
+            await customDialog.WaitUntilUnloadedAsync();
+
+            return dataContext.Pin == dataContext.PinCOnfirmation;
         }
     }
 }
